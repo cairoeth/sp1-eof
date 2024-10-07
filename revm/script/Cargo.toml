@@ -1,0 +1,11 @@
+[package]
+name = "revm-eof-script"
+version = { workspace = true }
+edition = { workspace = true }
+publish = false
+
+[dependencies]
+sp1-sdk = { workspace = true }
+
+[build-dependencies]
+sp1-build = { workspace = true }
