@@ -15,7 +15,7 @@ The following table shows the performance of the EOF-based and legacy EVM interp
 
 ## Running
 
-To run the benchmarks, go to the `[experiment]/script` directory and run:
+To run the benchmarks, go to the `revm/script` directory and run:
 
 - EOF: `RUST_LOG=info EOF=true cargo run --release`
 - Legacy EVM: `RUST_LOG=info EOF=false cargo run --release`
