@@ -20,6 +20,7 @@ contract TestFib is Test {
         assertEq(fib.fib(4), 3);
         assertEq(fib.fib(5), 5);
         assertEq(fib.fib(6), 8);
+        assertEq(fib.fib(1000), 5965);
     }
 
     // Exclude from coverage report
