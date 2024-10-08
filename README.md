@@ -8,10 +8,10 @@ This repository benchmarks the performance of the Revm EOF and legacy EVM interp
 
 The following table shows the performance of the EOF-based and legacy EVM interpreters for the Fibonacci contract. As can be observed, the EOF-based program is 2.9 times more efficient for the total and interpreter cycles (65.80% fewer cycles required) and gas. It also runs 2.69 times faster and has a proof size 2.04 times smaller.
 
-| Program    | Set up input (cycles) | Set up runtime (cycles) | Interpreter (cycles) | Total (cycles) | Gas       | E2E time (s) | kHz   | Proof size |
-|------------|----------------------:|------------------------:|---------------------:|---------------:|----------:|-------------:|------:|-----------:|
-| EOF        |                23,276 |                  11,193 |            3,112,476 |      3,158,346 | 3,422,679 |        58.86 | 53.66 |  8,087,802 |
-| Legacy EVM |                42,709 |                  11,188 |            9,101,063 |      9,166,261 | 9,855,856 |       158.47 | 57.84 | 16,489,434 |
+| Program    | Set up input (cycles) | Set up runtime (cycles) | Interpreter (cycles) | Total (cycles) | E2E time (s) | kHz   | Proof size |
+|------------|----------------------:|------------------------:|---------------------:|---------------:|-------------:|------:|-----------:|
+| EOF        |                23,276 |                  11,193 |            3,112,476 |      3,158,346 |        58.86 | 53.66 |  8,087,802 |
+| Legacy EVM |                42,709 |                  11,188 |            9,101,063 |      9,166,261 |       158.47 | 57.84 | 16,489,434 |
 
 ## Running
 
