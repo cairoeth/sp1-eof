@@ -1,0 +1,17 @@
+[workspace]
+[package]
+name = "revm-program"
+version = "1.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+# Sp1
+sp1-zkvm = { git = "https://github.com/succinctlabs/sp1.git", branch = "dev"}
+
+# EVM
+revm-interpreter = "10.0.1"
+revm = { version = "14.0.3", features = ["serde"], default-features = false }
+
+# Misc
+hex = "0.4.3"
