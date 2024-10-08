@@ -2,9 +2,9 @@
 pragma solidity ^0.8.0;
 
 contract MyFib {
-    function fib(uint32 n) external pure returns(uint32 b) { 
+    function fib(uint32 n) external pure returns (uint32 b) {
         if (n == 0) {
-            return 0;   
+            return 0;
         }
         uint32 a = 1;
         b = 1;
