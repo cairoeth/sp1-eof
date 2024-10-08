@@ -9,10 +9,13 @@ env:
 
 jobs:
   check:
+    defaults:
+      run:
+        working-directory: ./solidity
     strategy:
       fail-fast: true
 
-    name: Foundry project
+    name: Solidity
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
