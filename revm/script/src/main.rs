@@ -1,5 +1,6 @@
 use sp1_sdk::{utils, ProverClient, SP1ProofWithPublicValues, SP1Stdin};
 use std::env;
+use std::time::Instant;
 
 fn main() {
     // The elf we want to execute inside the zkVM.
@@ -23,12 +24,11 @@ fn main() {
     // Create a `ProverClient` method.
     let client = ProverClient::from_env();
 
+    // Track the start time before execution.
+    let start_time = Instant::now();
+
     // Execute the program using the `ProverClient.execute` method, without generating a proof.
     let (_, report) = client.execute(elf, &stdin.clone()).run().unwrap();
-    println!(
-        "executed program with {} cycles",
-        report.total_instruction_count()
-    );
 
     // Generate the proof for the given program and input.
     let (pk, vk) = client.setup(elf);
@@ -60,5 +60,19 @@ fn main() {
         .verify(&deserialized_proof, &vk)
         .expect("verification failed");
 
-    println!("successfully generated and verified proof for the program!")
+    println!("successfully generated and verified proof for the program!");
+
+    // Track the end time after execution.
+    let end_time = Instant::now();
+
+    // Calculate the elapsed time.
+    let elapsed_time = end_time.duration_since(start_time);
+
+    println!(
+        "opcodes={}, syscalls={}, gas={}, e2e={:?}",
+        report.total_instruction_count(),
+        report.total_syscall_count(),
+        report.gas.unwrap_or(0),
+        elapsed_time.as_secs_f64()
+    );
 }
