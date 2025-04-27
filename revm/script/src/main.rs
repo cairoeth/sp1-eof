@@ -4,9 +4,9 @@ use std::env;
 fn main() {
     // The elf we want to execute inside the zkVM.
     let elf: &[u8] = if env::var("EOF").unwrap_or_default() == "true" {
-        include_bytes!("../../program/elf/riscv32im-succinct-zkvm-elf")
+        include_bytes!("../../program/elf/revm-eof-program")
     } else {
-        include_bytes!("../../program_legacy/elf/riscv32im-succinct-zkvm-elf")
+        include_bytes!("../../program_legacy/elf/revm-non-eof-program")
     };
 
     // Setup logging.

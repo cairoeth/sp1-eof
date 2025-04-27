@@ -8,7 +8,6 @@ use std::u64;
 
 use revm::primitives::Bytes;
 use revm::primitives::{Bytecode, Eof, PragueSpec};
-use revm_interpreter::analysis::to_analysed;
 use revm_interpreter::opcode::InstructionTable;
 use revm_interpreter::DummyHost;
 use revm_interpreter::{Contract, Interpreter, EMPTY_SHARED_MEMORY};
