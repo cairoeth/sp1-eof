@@ -43,7 +43,12 @@ fn main() {
     let _ = proof.public_values.read::<u32>();
     let a: Vec<u8> = proof.public_values.read::<Vec<u8>>();
 
+    let result = u32::from_be_bytes(a[28..32].try_into().unwrap());
+
+    assert_eq!(result, 5965);
+
     println!("a: {:?}", a);
+    println!("result: {}", result);
 
     // Verify proof and public values
     client.verify(&proof, &vk).expect("verification failed");
