@@ -21,10 +21,10 @@ fn main() {
     stdin.write(&n);
 
     // Create a `ProverClient` method.
-    let client = ProverClient::new();
+    let client = ProverClient::from_env();
 
     // Execute the program using the `ProverClient.execute` method, without generating a proof.
-    let (_, report) = client.execute(elf, stdin.clone()).run().unwrap();
+    let (_, report) = client.execute(elf, &stdin.clone()).run().unwrap();
     println!(
         "executed program with {} cycles",
         report.total_instruction_count()
@@ -32,7 +32,7 @@ fn main() {
 
     // Generate the proof for the given program and input.
     let (pk, vk) = client.setup(elf);
-    let mut proof = client.prove(&pk, stdin).run().unwrap();
+    let mut proof = client.prove(&pk, &stdin).run().unwrap();
 
     println!("generated proof");
 

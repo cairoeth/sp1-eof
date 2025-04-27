@@ -1,8 +1,6 @@
 name: Rust
 
-on:
-  push:
-    branches: [ "main" ]
+on: push
 
 env:
   CARGO_TERM_COLOR: always
@@ -23,7 +21,7 @@ jobs:
         uses: actions-rs/toolchain@v1
         with:
           profile: minimal
-          toolchain: 1.79.0
+          toolchain: 1.85.0
 
       - name: Install SP1 toolchain
         run: |
