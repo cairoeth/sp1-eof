@@ -38,7 +38,7 @@ fn main() {
 
     // Read and verify the output.
     //
-    // Note that this output is read from values commited to in the program using
+    // Note that this output is read from values committed to in the program using
     // `sp1_zkvm::io::commit`.
     let _ = proof.public_values.read::<u32>();
     let a: Vec<u8> = proof.public_values.read::<Vec<u8>>();
